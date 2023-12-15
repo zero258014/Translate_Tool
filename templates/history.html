@@ -1,0 +1,133 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/history.css">
+
+{% if errorMsg %}
+<h1>{{errorMsg}}</h1>
+
+{% else %}
+
+<main>
+    <section id="left">
+        <h2>検索条件</h2>
+        <form action="/history" method="POST">
+            <div class="search-opt">
+                <h3>期間</h3>
+                <span>自</span>
+                <input class="input-date" type="date" name="start_date">
+                <br>
+                <span>至</span>
+                <input class="input-date" type="date" name="end_date">
+            </div>
+
+            <div class="search-opt">
+                <h3>入力言語</h3>
+                <select class="select-lan" name="input_language">
+                    <option value="">言語</option>
+                    <option value="English">英語</option>
+                    <option value="Japanese">日本語</option>
+                    <option value="Chinese">中国語</option>
+                </select>
+            </div>
+            <div class="search-opt">
+                <h3>入力文章のキーワード</h3>
+                <input class="input-keyword" type="text" name="input_keyword" placeholder="Keyword">
+            </div>
+
+            <div class="search-opt">
+                <h3>翻訳言語</h3>
+                <select class="select-lan" name="output_language">
+                    <option value="">言語</option>
+                    <option value="English">英語</option>
+                    <option value="Japanese">日本語</option>
+                    <option value="Chinese">中国語</option>
+                </select>
+            </div>
+            <div class="search-opt">
+                <h3>翻訳言語のキーワード</h3>
+                <input class="input-keyword" type="text" name="output_keyword" placeholder="Keyword">
+            </div>
+            <!-- <input type="submit" value="検索"> -->
+            <button type="submit">検索</button>
+            <button type="button" id="my-favorite-button">♥お気に入り</button>
+        </form>
+
+    </section>
+
+    <section id="right">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>保存時間</th>
+                    <th>入力言語</th>
+                    <th>入力文章</th>
+                    <th>翻訳言語</th>
+                    <th>翻訳結果</th>
+                    <th colspan="2">操作</th>
+                </tr>
+            </thead>
+            <tbody id="history-forloop">
+                {% for h in history %}
+                <tr class="all-tr">
+                    <td> {{ loop.index }}</td>
+                    <td>{{h[2]}}</td>
+                    <td>{{h[3]}}</td>
+                    <td>{{h[4]}}</td>
+                    <td>{{h[5]}}</td>
+                    <td>{{h[6]}}</td>
+                    <td>
+                        {% if h[7] == 1 %}
+                        <i class="fa-solid fa-heart fa-xl" style="color: #fb4b4b;" data-value="{{h[0]}}"></i>
+                        {% else %}
+                        <i class="fa-regular fa-heart fa-xl" style="color: #fb4b4b;" data-value="{{h[0]}}"></i>
+                        {% endif %}
+                    </td>
+                    <td><button class="data-delete" data-value="{{h[0]}}">削除</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <dialog id="delete-dialog">
+            <p>データを削除したら、復元できません。</p>
+            <p>本当に削除しますか？</p>
+            <button id="delete-no">キャンセル</button>
+            <button id="delete-yes">確認</button>
+        </dialog>
+
+        <dialog id="detail-dialog">
+            <div id="dialog-box">
+                <h3 id="detail-h3">翻訳内容</h3>
+                <span id="detail-time"></span>
+                <table id="detail-table">
+                    <tr id="detail-title">
+                        <th class="detail-title-th">言語</th>
+                        <th class="detail-title-th">文章</th>
+                    </tr>
+                    <tr class="detail-tr">
+                        <th class="detail-lan" id="input-lan">lan1</th>
+                        <td class="detail-text" id="input-text">
+                            text1
+                        </td>
+                    </tr>
+                    <tr class="detail-tr">
+                        <th class="detail-lan" id="output-lan">lan2</th>
+                        <td class="detail-text" id="output-text">
+                            text2
+                        </td>
+                    </tr>
+                </table>
+                <button id="detail-dialog-btn">OK</button>
+            </div>
+        </dialog>
+
+    </section>
+</main>
+
+{% endif %}
+<!-- fontawesome ハートのアイコン -->
+<script src="https://kit.fontawesome.com/7d8a7f3302.js" crossorigin="anonymous"></script>
+<script src="/static/js/history.js"></script>
+{% endblock %}

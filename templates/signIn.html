@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/signIn.css">
+
+{% if signUpMsg %}
+<dialog open style="z-index: 999;">
+    <p>{{ signUpMsg }}</p>
+    <button id="close">close</button>
+</dialog>
+
+{% endif %}
+
+<main id="sign-in-main">
+    <section id="sign-in-page-box">
+        <h1>ログイン</h1>
+
+        <form action="/signIn" method="post" id="sign-in-form">
+            <div class="input-box">
+                <span>ユーザー名</span>
+                <br>
+                <input class="input-style" type="text" id="username" name="username" placeholder="username">
+            </div>
+
+            <div class="input-box">
+                <span>パスワード</span>
+                <br>
+                <input class="input-style" type="password" id="password" name="password" placeholder="password">
+            </div>
+
+            <div class="input-box  submit-btn">
+                <button type="submit" id="submit">ログイン</button>
+                or
+                <button type="button" id="redirect-sign-up">会員登録→</button>
+            </div>
+        </form>
+        <div id="errorMsg">{{errorMsg}}</div>
+    </section>
+</main>
+<script src="/static/js/signIn.js"></script>
+
+{% endblock %}

@@ -1,0 +1,119 @@
+#translatePage {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#myForm {
+    box-sizing: border-box;
+    width: 40%;
+    margin-bottom: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language-group {
+    width: 80%;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.input-radio {
+    display: none;
+}
+
+.input-language-opt,
+.output-language-opt {
+    width: 33%;
+    padding: 2px 4px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-language-opt:hover,
+.output-language-opt:hover {
+    cursor: pointer;
+    border: 2px solid goldenrod;
+    color: goldenrod;
+}
+
+
+#lan-select-arrow {
+    width: 10%;
+    margin-bottom: 2vh;
+}
+
+#input-text {
+    resize: none;
+    padding: 3%;
+    width: 90%;
+    height: 30vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#submit-btn,
+#clear-btn {
+    width: 80px;
+    height: 35px;
+    font-size: 20px;
+}
+
+#loading {
+    visibility: hidden;
+}
+
+#check {
+    position: absolute;
+    left: 2%;
+    max-width: 5vw;
+    visibility: hidden;
+}
+
+#result-div {
+    position: relative;
+    background-color: white;
+    box-sizing: border-box;
+    border: 2px black solid;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    width: 40%;
+    min-height: 65vh;
+}
+
+#result-title-bar {
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid black;
+    background-color: rgb(130, 130, 130);
+    height: 30px;
+}
+
+#result-title {
+    margin: auto 1vw;
+    color: rgb(255, 233, 143);
+}
+
+#copy {
+    z-index: 5;
+    position: absolute;
+    right: 5px;
+}
+
+#copied {
+    z-index: 10;
+    position: absolute;
+    right: 5px;
+    color: green;
+    visibility: hidden;
+    font-size: 20px;
+}
+
+#result {
+    padding: 1vh 1vw;
+}

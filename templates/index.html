@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Tool</title>
+
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Sawarabi+Gothic&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <header>
+        <nav class="header-box">
+            <ul>
+                <li>
+                    <div class="li-box">
+                        <img class="icon" src="/static/image/icon_translate.png" alt="">
+                        <a class="text-blue" href="{{ url_for('translatePage') }}">翻訳ツール</a>
+                    </div>
+                </li>
+                {% if username %}
+                <li>
+                    <div class="li-box">
+                        <img class="icon" src="/static/image/icon_history.png" alt="">
+                        <a class="text-blue" href="{{ url_for('historyPage') }}">履歴検索</a>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="header-box" id="logo">
+            <a href="{{ url_for('index') }}"><img id="logo-img" src="/static/image/LOGO.png" alt="logo"></a>
+        </div>
+
+        {% if username %}
+        <div class="header-box" id="sign-in-box">
+            <div class="sign-in-box-part">
+                <a class="text-blue" id="personal-info" href="{{ url_for('info') }}">
+                    <img class="icon info" src="/static/image/icon_info.png" alt="info-icon">
+                    {{username}}
+                </a>
+            </div>
+            <div class="sign-in-box-part">
+                <button id="logout">logout</button>
+            </div>
+        </div>
+        <dialog id="logout-dialog">
+            <p>ログアウトしますか？</p>
+            <button id="logout-no">キャンセル</button>
+            <button id="logout-yes">確認</button>
+        </dialog>
+        <script src="/static/js/logout.js"></script>
+        {% else %}
+        <div class="header-box" id="sign-out-box">
+            <div class="sign-out-box-part">
+                <a class="text-blue" href="{{ url_for('signUpPage') }}">
+                    会員登録
+                </a>
+            </div>
+            <div class="sign-out-box-part">
+                <a class="text-blue" href="{{ url_for('signIn') }}">ログイン</a>
+            </div>
+        </div>
+        {% endif %}
+    </header>
+
+
+    {% block content %}
+    <main>
+        <div class="main-box" id="main-box-left">
+            <img id="index-bg" src="/static/image/index_bg.jpg" alt="background">
+            <button id="try-it-btn">TRY IT</button>
+        </div>
+        <div class="main-box">
+            <h1 id="index-title">C TEAM</h1>
+            <span>吉田学園情報ビジネス専門学校 AIシステム学科</span>
+
+            <div id="index-text">
+                <h2>翻訳ツール</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti neque sint, suscipit reiciendis
+                    vero
+                    amet provident. Adipisci asperiores, ducimus aspernatur exercitationem iusto reprehenderit,
+                    architecto,
+                    voluptatibus laborum dicta iste veritatis nihil!
+                </p>
+                <h2>私たちについて</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deserunt, tenetur quidem, nobis
+                    maxime,
+                    fugit culpa recusandae nulla commodi vel quisquam voluptas in! Veritatis eum, qui dolores ad quo
+                    nostrum!
+                </p>
+            </div>
+        </div>
+
+    </main>
+    <script src="/static/js/index_style.js"></script>
+    {% endblock %}
+
+</body>
+
+</html>

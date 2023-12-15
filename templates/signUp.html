@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/signUp.css">
+<main>
+    <section id="left">
+        <h1>SIGN UP</h1>
+        <form action="/signUp" method="post" id="sign-up-form">
+
+            <div class="input-box first">
+                <span>ユーザー名</span>
+                <br>
+                <input class="input-style" type="text" id="username" name="username" placeholder="User Name">
+                <button type="button" id="username-check">確認</button>
+            </div>
+            <span id="check-name-msg"></span>
+            <div class="input-box">
+                <span>E-mail</span>
+                <br>
+                <input class="input-style" type="email" id="email" name="email" placeholder="E-mail">
+            </div>
+
+            <div class="input-box">
+                <span>パスワード</span>
+                <br>
+                <input class="input-style" type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="input-box">
+                <span>パスワード確認</span>
+                <br>
+                <input class="input-style" type="password" id="password-check" name="password-check"
+                    placeholder="Confirm Password">
+            </div>
+
+            <div class="input-box">
+                <button type="submit" id="submit">登録</button>
+                or
+                <button type="button" id="redirect-login">ログイン→</button>
+            </div>
+        </form>
+        <div id="warning">{{msg}} </div>
+    </section>
+
+    <section id="right">
+        <div id="sign-up-logo-box">
+            <img src="/static/image/LOGO.png" alt="logo">
+        </div>
+
+        <h2>会員登録の追加機能：</h2>
+
+
+        <ul id="sign-up-ul">
+            <li class="sign-up-li">
+                履歴検索
+            </li>
+            <p>
+                この機能とは、過去にログインしいる状態で翻訳した記事や文書を入力条件に基づいて検索できます。ログインしている状態のみが翻訳した結果をデータベースに追加できます。
+            </p>
+            <li class="sign-up-li">
+                お気に入り登録
+            </li>
+            <p>
+                会員ログイン後に利用できる機能で、お気に入りの翻訳結果を追加・削除することができます。
+            </p>
+        </ul>
+    </section>
+</main>
+
+
+<script src="/static/js/signUp.js"></script>
+{% endblock %}

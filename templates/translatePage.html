@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/translatePage.css">
+<main id="translatePage">
+
+    <form id="myForm">
+        <div class="language-group">
+            <input class="input-radio" type="radio" name="inputLanguage" id="inputEnglish" value="English" checked>
+            <label class="input-language-opt" for="inputEnglish">英語</label>
+
+            <input class="input-radio" type="radio" name="inputLanguage" id="inputJapanese" value="Japanese">
+            <label class="input-language-opt" for="inputJapanese">日本語</label>
+
+            <input class="input-radio" type="radio" name="inputLanguage" id="inputChinese" value="Chinese">
+            <label class="input-language-opt" for="inputChinese">中国語</label>
+        </div>
+
+        <img id="lan-select-arrow" src="/static/image/arrow_bottom.png" alt="">
+
+        <div class="language-group">
+            <input class="input-radio" type="radio" name="outputLanguage" id="outputEnglish" value="English" checked>
+            <label class="output-language-opt" for="outputEnglish">英語</label>
+
+            <input class="input-radio" type="radio" name="outputLanguage" id="outputJapanese" value="Japanese">
+            <label class="output-language-opt" for="outputJapanese">日本語</label>
+
+            <input class="input-radio" type="radio" name="outputLanguage" id="outputChinese" value="Chinese">
+            <label class="output-language-opt" for="outputChinese">中国語</label>
+        </div>
+        <br>
+
+        <textarea id="input-text" name="textToTranslate" aria-label="With textarea" placeholder="TEXT"></textarea>
+        <br>
+        <div>
+            <button id="submit-btn" type="submit">翻訳</button>
+            <button id="clear-btn" type="button">クリア</button>
+        </div>
+
+
+    </form>
+    <div style="position: relative;">
+        <img id="loading" src="/static/image/loading.gif" alt="loading">
+        <img id="check" src="/static/image/check.png" alt="check">
+    </div>
+    <div id="result-div">
+        <div id="result-title-bar">
+            <span id="result-title">RESULT</span>
+            <span id="copied">copied</span>
+            <button type="button" id="copy">Copy</button>
+        </div>
+        <p id="result" class="result" name="result"></p>
+    </div>
+</main>
+
+<script src="/static/js/translate_ajax.js"></script>
+<script src="/static/js/translatePage_style.js"></script>
+{% endblock %}

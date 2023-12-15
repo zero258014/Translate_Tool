@@ -1,0 +1,74 @@
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(105, 105, 105);
+    height: 10vh;
+}
+
+.header-box {
+    width: 31%;
+}
+
+nav {
+    padding-left: 3vw;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 0 1vw;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+}
+
+#logo-img {
+    height: 50px;
+}
+
+#sign-in-box,
+#sign-out-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-in-box-part,
+.sign-out-box-part {
+    margin: 0 1vw;
+}
+
+#personal-info {
+    border: solid 2px #ffde59;
+    padding: 0 5px;
+    border-radius: 10px;
+    padding-bottom: 4px;
+
+    display: flex;
+    align-items: center;
+}
+
+#personal-info:hover {
+    border: solid 2px #6ec5ff;
+}
+
+
+.icon {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.info {
+    width: 15px;
+    padding-top: 4px;
+}
+
+.li-box {
+    display: flex;
+}

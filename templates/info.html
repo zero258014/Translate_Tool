@@ -1,0 +1,158 @@
+{% extends "index.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/info.css">
+{% if errorMsg %}
+<h1>{{errorMsg}}</h1>
+
+{% elif warningMsg == "古いパスワードが間違っています"%}
+
+
+{% for i in info %}
+<main id="info-main">
+    <div id="info-box">
+        <div id="icon-box">
+            <img src="/static/image/icon_info.png" alt="info-icon" id="info-icon">
+        </div>
+        <h1>{{i[0]}}　<span style="font-size: 28px;">さん</span></h1>
+    </div>
+
+    <div id="errorMsg">{{warningMsg}}</div>
+
+    <form action="/info" method="post" id="info-form" class="forms" style="display: none;">
+        <div class="input-box">
+            <span>ユーザーネーム</span>
+            <input type="text" value="{{i[0]}}" name="username" disabled class="input-style">
+        </div>
+
+        <div class="input-box">
+            <span>
+                Email
+                <button type="button" id="email-edit-btn">編集</button>
+            </span>
+            <input type="email" value="{{i[1]}}" id="email" name="email" disabled class="input-style">
+        </div>
+
+        <div class="input-box">
+            <span>
+                パスワード
+                <button type="button" id="pwd-change-button">変更</button>
+            </span>
+            <input type="password" placeholder="非表示" id="pwd-input" name="password" disabled class="input-style">
+        </div>
+
+        <div class="input-box btn">
+            <button type="submit" style="display: none;" id="info-submit" class="btns">更新</button>
+            <button type="button" id="update-cancel-btn" style="display: none;" class="btns">キャンセル</button>
+        </div>
+    </form>
+
+    <form action="/info" method="post" id="pwd-form" class="forms">
+        <div class="input-box">
+            <span>ユーザーネーム</span>
+            <input type="text" value="{{i[0]}}" name="username" disabled class="input-style">
+        </div>
+        <div class="input-box">
+            <span>古いパスワード</span>
+            <input type="password" id="old-pwd" name="old_pwd" class="input-style pwd">
+        </div>
+        <div class="input-box">
+            <span>新しいパスワード</span>
+            <input type="password" id="new-pwd" name="new_pwd" class="input-style pwd">
+        </div>
+        <div class="input-box">
+            <span>新しいパスワード確認</span>
+            <input type="password" id="new-pwd-check" name="new_pwd_check" class="input-style pwd">
+        </div>
+
+        <div class="input-box btn">
+            <button type="submit" id="pwd-submit" class="btns">確認</button>
+            <button type="button" id="pwd-cancel-btn" class="btns">キャンセル</button>
+        </div>
+    </form>
+    {% endfor %}
+
+
+</main>
+
+
+{% else %}
+
+{% if result %}
+<dialog open style="z-index: 999;" id="result-dialog">
+    <p>{{result}}</p>
+    <button type="button" id="dialog-btn">OK</button>
+</dialog>
+
+{% endif %}
+
+
+{% for i in info %}
+<main id="info-main">
+    <div id="info-box">
+        <div id="icon-box">
+            <img src="/static/image/icon_info.png" alt="info-icon" id="info-icon">
+        </div>
+        <h1>{{i[0]}}　<span style="font-size: 28px;">さん</span></h1>
+    </div>
+
+    <div id="errorMsg">{{warningMsg}}</div>
+
+    <form action="/info" method="post" id="info-form" class="forms">
+        <div class="input-box">
+            <span>ユーザーネーム</span>
+            <input type="text" value="{{i[0]}}" name="username" disabled class="input-style">
+        </div>
+
+        <div class="input-box">
+            <span>
+                Email
+                <button type="button" id="email-edit-btn">編集</button>
+            </span>
+            <input type="email" value="{{i[1]}}" id="email" name="email" disabled class="input-style">
+        </div>
+
+        <div class="input-box">
+            <span>
+                パスワード
+                <button type="button" id="pwd-change-button">変更</button>
+            </span>
+            <input type="password" placeholder="非表示" id="pwd-input" name="password" disabled class="input-style">
+        </div>
+
+        <div class="input-box btn">
+            <button type="submit" style="display: none;" id="info-submit" class="btns">更新</button>
+            <button type="button" id="update-cancel-btn" style="display: none;" class="btns">キャンセル</button>
+        </div>
+    </form>
+
+    <form action="/info" method="post" id="pwd-form" style="display: none;" class="forms">
+        <div class="input-box">
+            <span>ユーザーネーム</span>
+            <input type="text" value="{{i[0]}}" name="username" disabled class="input-style">
+        </div>
+        <div class="input-box">
+            <span>古いパスワード</span>
+            <input type="password" id="old-pwd" name="old_pwd" class="input-style pwd">
+        </div>
+        <div class="input-box">
+            <span>新しいパスワード</span>
+            <input type="password" id="new-pwd" name="new_pwd" class="input-style pwd">
+        </div>
+        <div class="input-box">
+            <span>新しいパスワード確認</span>
+            <input type="password" id="new-pwd-check" name="new_pwd_check" class="input-style pwd">
+        </div>
+
+        <div class="input-box btn">
+            <button type="submit" id="pwd-submit" class="btns">確認</button>
+            <button type="button" id="pwd-cancel-btn" class="btns">キャンセル</button>
+        </div>
+    </form>
+    {% endfor %}
+
+</main>
+
+{% endif %}
+
+<script src="/static/js/info.js"></script>
+{% endblock %}
