@@ -2,15 +2,23 @@
 
 このプロジェクトは、OpenAI API を使用して言語翻訳を行う翻訳ウェブアプリケーションです。Flask、JavaScript、HTML、CSS の技術を使用して構築されています。
 
+![home page](./static/image/index.png)
+
 ## 機能
 
 - **翻訳機能：** このアプリケーションの主要な機能は、OpenAI API を使用してテキストを翻訳することです。ユーザーは一つの言語でテキストを入力し、希望する言語で翻訳されたテキストを取得できます。
+
+![translation](./static/image/translatePage.png)
   
 - **ユーザー登録：** ユーザーはアカウントを登録することができます。登録したユーザーはログインして追加の機能にアクセスできます。
+
+![sign up](./static/image/signUp.png)
   
 - **翻訳履歴：** ログインすると、ユーザーは自分の翻訳履歴を表示できます。この機能により、ユーザーは以前の翻訳を参照することができます。
   
 - **お気に入り機能：** アカウントにログインしているユーザーは、特定の翻訳をお気に入りにマークすることができます。この機能により、ユーザーはお気に入りの翻訳テキストを保存して簡単にアクセスできます。
+
+![translation history](./static/image/history.png)
   
 
 ## 使用技術
@@ -34,7 +42,7 @@
 4. `python app.py` を実行して Flask アプリケーションを起動します。
 5. Web ブラウザで `http://localhost:5000` にアクセスしてアプリケーションにアクセスします。
 
-[English content goes here...]
+
 
 # Translation Web Application
 
@@ -77,7 +85,7 @@ To use this application locally:
 5. Access the application through your web browser at http://localhost:5000.
   
 
-[中文內容放在這裡...]
+
 
 # 翻譯網頁應用程式
 
