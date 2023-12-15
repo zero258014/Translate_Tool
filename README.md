@@ -34,6 +34,8 @@
 4. `python app.py` を実行して Flask アプリケーションを起動します。
 5. Web ブラウザで `http://localhost:5000` にアクセスしてアプリケーションにアクセスします。
 
+[English content goes here...]
+
 # Translation Web Application
 
 This project is a translation web application that utilizes the OpenAI API for language translation purposes. It is built using Flask, JavaScript, HTML, and CSS technologies.
@@ -74,6 +76,8 @@ To use this application locally:
   
 5. Access the application through your web browser at http://localhost:5000.
   
+
+[中文內容放在這裡...]
 
 # 翻譯網頁應用程式
 
