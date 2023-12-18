@@ -39,7 +39,7 @@
 1. このリポジトリをローカルマシンにクローンします。
 2. `pip install -r requirements.txt` を実行して必要な依存関係をインストールします。
 3. OpenAI API キーの必要な環境変数を設定します。
-4. `python app.py` を実行して Flask アプリケーションを起動します。
+4. `python main.py` を実行して Flask アプリケーションを起動します。
 5. Web ブラウザで `http://localhost:5000` にアクセスしてアプリケーションにアクセスします。
 
 
@@ -80,7 +80,7 @@ To use this application locally:
   
 3. Set up the necessary environment variables for the OpenAI API keys.
   
-4. Run the Flask application by executing python app.py.
+4. Run the Flask application by executing python main.py.
   
 5. Access the application through your web browser at http://localhost:5000.
   
@@ -120,5 +120,5 @@ To use this application locally:
 1. 將此存儲庫克隆到您的本地計算機。
 2. 通過運行 `pip install -r requirements.txt` 安裝所需的依賴項。
 3. 設置 OpenAI API 金鑰的必要環境變量。
-4. 通過執行 `python app.py` 運行 Flask 應用程式。
+4. 通過執行 `python main.py` 運行 Flask 應用程式。
 5. 在網絡瀏覽器中進入 `http://localhost:5000` 訪問應用程式。
